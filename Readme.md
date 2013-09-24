@@ -59,17 +59,17 @@ public string HighlightToHtml(
 	string title = "", 
 	bool generateInlineStyles = false, 
 	string classPrefix = "", 
-        string wrappingDivClass = "highlight", 
-        string wrappingDivStyles = "", 
-        string preStyles = "", 
-        LineNumberStyle lineNumberStyle = LineNumberStyle.none, 
-        int lineNumberStart = 1, 
-        bool noBackground = false,  
-        string lineBreaks="\n", 
-        string lineAnchorPrefix = null, 
-        string lineSpanPrefix = null, 
-        bool anchorLineNumbers = false, 
-        string highlightLines = "");
+    string wrappingDivClass = "highlight", 
+    string wrappingDivStyles = "", 
+    string preStyles = "", 
+    LineNumberStyle lineNumberStyle = LineNumberStyle.none, 
+    int lineNumberStart = 1, 
+    bool noBackground = false,  
+    string lineBreaks="\n", 
+    string lineAnchorPrefix = null, 
+    string lineSpanPrefix = null, 
+    bool anchorLineNumbers = false, 
+    string highlightLines = "");
 
 public string HighlightToLatex(
 	string sourceCode, 
