@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>ClrPlus.Pygments</id>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <title>Pygments</title>
         <authors>fearthecowboy coapp</authors>
         <owners>fearthecowboy coapp</owners>
@@ -18,53 +18,28 @@ public static IEnumerable&lt;Lexer&gt; Lexers; //  all the language lexers avail
 public static IEnumerable&lt;string&gt; Styles; // all the Styles available 
 
 
-public string HighlightToBBCode(
-    string sourceCode, 
-    string lexerName, 
-    string styleName, 
-    bool codeTag = false, 
-    bool  monoFont = false );
+public string HighlightToBBCode( ... )
+public string HighlightToRTF( ... )
+public string HighlightToHtml( ... )
+public string HighlightToLatex( ... )
 
-public string HighlightToRTF(
-    string sourceCode, 
-    string lexerName, 
-    string styleName, 
-    string fontFace=null);
 
-public string HighlightToHtml(
-    string sourceCode, 
-    string lexerName, 
-    string styleName, 
-    bool fragment = false, 
-    string title = "", 
-    bool generateInlineStyles = false, 
-    string classPrefix = "", 
-    string wrappingDivClass = "highlight", 
-    string wrappingDivStyles = "", 
-    string preStyles = "", 
-    LineNumberStyle lineNumberStyle = LineNumberStyle.none, 
-    int lineNumberStart = 1, 
-    bool noBackground = false,  
-    string lineBreaks="\n", 
-    string lineAnchorPrefix = null, 
-    string lineSpanPrefix = null, 
-    bool anchorLineNumbers = false, 
-    string highlightLines = "");
+Example:
 
-public string HighlightToLatex(
-    string sourceCode, 
-    string lexerName, 
-    string styleName, 
-    bool fragment = false, 
-    string title = "", 
-    string documentClass = "article", 
-    bool lineNumbers = false, 
-    int lineNumberStart = 1, 
-    int lineStep = 1, 
-    bool texComments = false, 
-    bool mathEscape = false ) 
 
-        
+using System.IO;
+
+namespace test {
+    class Program {
+        static void Main(string[] args)
+        {
+            var highlighter = new Pygments.Highlighter();
+            var src = File.ReadAllText(@"program.cs");
+            File.WriteAllText("output.html", highlighter.HighlightToHtml(src, "c#", "vs", highlightLines: "7 8 9 10"));
+        }
+    }
+}
+
         </description>
         <summary>A single assembly .Net wrapper for Pygments Syntax Highlighter</summary>
         <language />
