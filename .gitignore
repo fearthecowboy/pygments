@@ -3,4 +3,4 @@ intermediate/
 packages/
 *.suo
 *.user
-
+*.nupkg
