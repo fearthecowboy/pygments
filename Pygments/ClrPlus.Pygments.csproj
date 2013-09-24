@@ -222,9 +222,22 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <ItemGroup>
+        <PythonRuntime Include="$(SolutionDir)packages\IronPython.2.7.3\lib\net40\*"/>
+    </ItemGroup>
+  
   <Target Name="BeforeBuild" Inputs="@(None)" Outputs="$(SolutionDir)intermediate\pygments.dll">
-    <Message Importance="High" Text="Rebuilding Pygments " />
-     <Exec Command="$(SolutionDir)packages\IronPython.2.7.3\tools\ipy.exe $(MsBuildThisFileDirectory)\pygments-lib\build_pygments.py"/>
+    <MakeDir Directories="$(SolutionDir)intermediate"/>
+    <Message Importance="High" Text="Rebuilding Pygments" />
+     <Copy
+            SourceFiles="@(PythonRuntime)"
+            DestinationFolder="$(SolutionDir)packages\IronPython.2.7.3\tools"
+            SkipUnchangedFiles="true"
+            UseHardlinksIfPossible="true"
+        />
+     <Exec 
+        WorkingDirectory="$(SolutionDir)packages\IronPython.2.7.3\lib\net40"
+        Command="$(SolutionDir)packages\IronPython.2.7.3\tools\ipy.exe $(MsBuildThisFileDirectory)\pygments-lib\build_pygments.py"/>
   </Target>
     <Target Name="BeforeClean" >
      <Delete Files="$(SolutionDir)intermediate\pygments.dll" />
