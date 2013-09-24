@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{685B1F48-9279-4C2F-9D0B-FEEFA0A22B32}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pygments</RootNamespace>
+    <AssemblyName>ClrPlus.Pygments</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <SolutionPath Condition="$(SolutionPath) == '' Or $(SolutionPath) == '*Undefined*'">$(SolutionDir)\CoApp.Powershell.sln</SolutionPath>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <Import Project="$(SolutionPath).props" Condition="Exists('$(SolutionPath).props')" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IronPython">
+      <HintPath>..\packages\IronPython.2.7.3\lib\Net40\IronPython.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IronPython.Modules">
+      <HintPath>..\packages\IronPython.2.7.3\lib\Net40\IronPython.Modules.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IronPython.SQLite">
+      <HintPath>..\packages\IronPython.2.7.3\lib\Net40\IronPython.SQLite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="IronPython.Wpf">
+      <HintPath>..\packages\IronPython.2.7.3\lib\Net40\IronPython.Wpf.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>..\packages\IronPython.2.7.3\lib\Net40\Microsoft.Dynamic.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>..\packages\IronPython.2.7.3\lib\Net40\Microsoft.Scripting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.AspNet">
+      <HintPath>..\packages\IronPython.2.7.3\lib\Net40\Microsoft.Scripting.AspNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata">
+      <HintPath>..\packages\IronPython.2.7.3\lib\Net40\Microsoft.Scripting.Metadata.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Highlighter.cs" />
+    <Compile Include="LineNumberStyle.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PyExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="pygments-lib\build_pygments.py" />
+    <None Include="pygments-lib\dependencies\abc.py" />
+    <None Include="pygments-lib\dependencies\bisect.py" />
+    <None Include="pygments-lib\dependencies\codecs.py" />
+    <None Include="pygments-lib\dependencies\collections.py" />
+    <None Include="pygments-lib\dependencies\commands.py" />
+    <None Include="pygments-lib\dependencies\copy.py" />
+    <None Include="pygments-lib\dependencies\fnmatch.py" />
+    <None Include="pygments-lib\dependencies\genericpath.py" />
+    <None Include="pygments-lib\dependencies\heapq.py" />
+    <None Include="pygments-lib\dependencies\keyword.py" />
+    <None Include="pygments-lib\dependencies\linecache.py" />
+    <None Include="pygments-lib\dependencies\ntpath.py" />
+    <None Include="pygments-lib\dependencies\nturl2path.py" />
+    <None Include="pygments-lib\dependencies\os.py" />
+    <None Include="pygments-lib\dependencies\stat.py" />
+    <None Include="pygments-lib\dependencies\string.py" />
+    <None Include="pygments-lib\dependencies\StringIO.py" />
+    <None Include="pygments-lib\dependencies\types.py" />
+    <None Include="pygments-lib\dependencies\urllib.py" />
+    <None Include="pygments-lib\dependencies\urlparse.py" />
+    <None Include="pygments-lib\dependencies\UserDict.py" />
+    <None Include="pygments-lib\dependencies\warnings.py" />
+    <None Include="pygments-lib\dependencies\weakref.py" />
+    <None Include="pygments-lib\dependencies\_abcoll.py" />
+    <None Include="pygments-lib\dependencies\_weakrefset.py" />
+    <None Include="pygments-lib\LICENSE" />
+    <None Include="pygments-lib\pygments\cmdline.py" />
+    <None Include="pygments-lib\pygments\console.py" />
+    <None Include="pygments-lib\pygments\filter.py" />
+    <None Include="pygments-lib\pygments\filters\__init__.py" />
+    <None Include="pygments-lib\pygments\formatter.py" />
+    <None Include="pygments-lib\pygments\formatters\bbcode.py" />
+    <None Include="pygments-lib\pygments\formatters\html.py" />
+    <None Include="pygments-lib\pygments\formatters\img.py" />
+    <None Include="pygments-lib\pygments\formatters\latex.py" />
+    <None Include="pygments-lib\pygments\formatters\other.py" />
+    <None Include="pygments-lib\pygments\formatters\rtf.py" />
+    <None Include="pygments-lib\pygments\formatters\svg.py" />
+    <None Include="pygments-lib\pygments\formatters\terminal.py" />
+    <None Include="pygments-lib\pygments\formatters\terminal256.py" />
+    <None Include="pygments-lib\pygments\formatters\_mapping.py" />
+    <None Include="pygments-lib\pygments\formatters\__init__.py" />
+    <None Include="pygments-lib\pygments\lexer.py" />
+    <None Include="pygments-lib\pygments\lexers\agile.py" />
+    <None Include="pygments-lib\pygments\lexers\asm.py" />
+    <None Include="pygments-lib\pygments\lexers\compiled.py" />
+    <None Include="pygments-lib\pygments\lexers\dalvik.py" />
+    <None Include="pygments-lib\pygments\lexers\dotnet.py" />
+    <None Include="pygments-lib\pygments\lexers\foxpro.py" />
+    <None Include="pygments-lib\pygments\lexers\functional.py" />
+    <None Include="pygments-lib\pygments\lexers\hdl.py" />
+    <None Include="pygments-lib\pygments\lexers\jvm.py" />
+    <None Include="pygments-lib\pygments\lexers\math.py" />
+    <None Include="pygments-lib\pygments\lexers\other.py" />
+    <None Include="pygments-lib\pygments\lexers\parsers.py" />
+    <None Include="pygments-lib\pygments\lexers\shell.py" />
+    <None Include="pygments-lib\pygments\lexers\special.py" />
+    <None Include="pygments-lib\pygments\lexers\sql.py" />
+    <None Include="pygments-lib\pygments\lexers\templates.py" />
+    <None Include="pygments-lib\pygments\lexers\text.py" />
+    <None Include="pygments-lib\pygments\lexers\web.py" />
+    <None Include="pygments-lib\pygments\lexers\_asybuiltins.py" />
+    <None Include="pygments-lib\pygments\lexers\_clbuiltins.py" />
+    <None Include="pygments-lib\pygments\lexers\_lassobuiltins.py" />
+    <None Include="pygments-lib\pygments\lexers\_luabuiltins.py" />
+    <None Include="pygments-lib\pygments\lexers\_mapping.py" />
+    <None Include="pygments-lib\pygments\lexers\_openedgebuiltins.py" />
+    <None Include="pygments-lib\pygments\lexers\_phpbuiltins.py" />
+    <None Include="pygments-lib\pygments\lexers\_postgres_builtins.py" />
+    <None Include="pygments-lib\pygments\lexers\_robotframeworklexer.py" />
+    <None Include="pygments-lib\pygments\lexers\_scilab_builtins.py" />
+    <None Include="pygments-lib\pygments\lexers\_sourcemodbuiltins.py" />
+    <None Include="pygments-lib\pygments\lexers\_stan_builtins.py" />
+    <None Include="pygments-lib\pygments\lexers\_vimbuiltins.py" />
+    <None Include="pygments-lib\pygments\lexers\__init__.py" />
+    <None Include="pygments-lib\pygments\modeline.py" />
+    <None Include="pygments-lib\pygments\plugin.py" />
+    <None Include="pygments-lib\pygments\scanner.py" />
+    <None Include="pygments-lib\pygments\style.py" />
+    <None Include="pygments-lib\pygments\styles\autumn.py" />
+    <None Include="pygments-lib\pygments\styles\borland.py" />
+    <None Include="pygments-lib\pygments\styles\bw.py" />
+    <None Include="pygments-lib\pygments\styles\colorful.py" />
+    <None Include="pygments-lib\pygments\styles\default.py" />
+    <None Include="pygments-lib\pygments\styles\emacs.py" />
+    <None Include="pygments-lib\pygments\styles\friendly.py" />
+    <None Include="pygments-lib\pygments\styles\fruity.py" />
+    <None Include="pygments-lib\pygments\styles\manni.py" />
+    <None Include="pygments-lib\pygments\styles\monokai.py" />
+    <None Include="pygments-lib\pygments\styles\murphy.py" />
+    <None Include="pygments-lib\pygments\styles\native.py" />
+    <None Include="pygments-lib\pygments\styles\pastie.py" />
+    <None Include="pygments-lib\pygments\styles\perldoc.py" />
+    <None Include="pygments-lib\pygments\styles\rrt.py" />
+    <None Include="pygments-lib\pygments\styles\tango.py" />
+    <None Include="pygments-lib\pygments\styles\trac.py" />
+    <None Include="pygments-lib\pygments\styles\vim.py" />
+    <None Include="pygments-lib\pygments\styles\vs.py" />
+    <None Include="pygments-lib\pygments\styles\__init__.py" />
+    <None Include="pygments-lib\pygments\token.py" />
+    <None Include="pygments-lib\pygments\unistring.py" />
+    <None Include="pygments-lib\pygments\util.py" />
+    <None Include="pygments-lib\pygments\__init__.py" />
+    <None Include="pygments-lib\test_compiled_pygments.py" />
+    <None Include="pygments_helper.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\packages\IronPython.2.7.3\lib\net40\IronPython.dll">
+      <Link>..\packages\IronPython.2.7.3\lib\net40\IronPython.dll</Link>
+      <LogicalName>IronPython.dll</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\IronPython.2.7.3\lib\net40\IronPython.Modules.dll">
+      <Link>..\packages\IronPython.2.7.3\lib\net40\IronPython.Modules.dll</Link>
+      <LogicalName>IronPython.Modules.dll</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\IronPython.2.7.3\lib\net40\Microsoft.Dynamic.dll">
+      <Link>..\packages\IronPython.2.7.3\lib\net40\Microsoft.Dynamic.dll</Link>
+      <LogicalName>Microsoft.Dynamic.dll</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\IronPython.2.7.3\lib\net40\Microsoft.Scripting.dll">
+      <Link>..\packages\IronPython.2.7.3\lib\net40\Microsoft.Scripting.dll</Link>
+      <LogicalName>Microsoft.Scripting.dll</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\packages\IronPython.2.7.3\lib\net40\Microsoft.Scripting.Metadata.dll">
+      <Link>..\packages\IronPython.2.7.3\lib\net40\Microsoft.Scripting.Metadata.dll</Link>
+      <LogicalName>Microsoft.Scripting.Metadata.dll</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(SolutionDir)intermediate\pygments.dll">
+      <Link>$(SolutionDir)intermediate\pygments.dll</Link>
+      <LogicalName>pygments.dll</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="BeforeBuild" Inputs="@(None)" Outputs="$(SolutionDir)intermediate\pygments.dll">
+    <Message Importance="High" Text="Rebuilding Pygments " />
+     <Exec Command="$(SolutionDir)packages\IronPython.2.7.3\tools\ipy.exe $(MsBuildThisFileDirectory)\pygments-lib\build_pygments.py"/>
+  </Target>
+    <Target Name="BeforeClean" >
+     <Delete Files="$(SolutionDir)intermediate\pygments.dll" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
