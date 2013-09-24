@@ -2,13 +2,70 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>ClrPlus.Pygments</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <title>Pygments</title>
         <authors>fearthecowboy coapp</authors>
         <owners>fearthecowboy coapp</owners>
+        <licenseUrl>https://bitbucket.org/birkenfeld/pygments-main/src/7304e4759ae65343d89a51359ca538912519cc31/LICENSE?at=default</licenseUrl>
         <projectUrl>https://github.com/coapp/pygments</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>A single assembly .Net wrapper for Pygments Syntax Highlighter</description>
+        <description>
+        
+        The Pygments for .NET library exposes two properties and four methods in the Pygments.Highlighter class
+
+public static IEnumerable&lt;Lexer&gt; Lexers; //  all the language lexers available
+
+public static IEnumerable&lt;string&gt; Styles; // all the Styles available 
+
+
+public string HighlightToBBCode(
+    string sourceCode, 
+    string lexerName, 
+    string styleName, 
+    bool codeTag = false, 
+    bool  monoFont = false );
+
+public string HighlightToRTF(
+    string sourceCode, 
+    string lexerName, 
+    string styleName, 
+    string fontFace=null);
+
+public string HighlightToHtml(
+    string sourceCode, 
+    string lexerName, 
+    string styleName, 
+    bool fragment = false, 
+    string title = "", 
+    bool generateInlineStyles = false, 
+    string classPrefix = "", 
+    string wrappingDivClass = "highlight", 
+    string wrappingDivStyles = "", 
+    string preStyles = "", 
+    LineNumberStyle lineNumberStyle = LineNumberStyle.none, 
+    int lineNumberStart = 1, 
+    bool noBackground = false,  
+    string lineBreaks="\n", 
+    string lineAnchorPrefix = null, 
+    string lineSpanPrefix = null, 
+    bool anchorLineNumbers = false, 
+    string highlightLines = "");
+
+public string HighlightToLatex(
+    string sourceCode, 
+    string lexerName, 
+    string styleName, 
+    bool fragment = false, 
+    string title = "", 
+    string documentClass = "article", 
+    bool lineNumbers = false, 
+    int lineNumberStart = 1, 
+    int lineStep = 1, 
+    bool texComments = false, 
+    bool mathEscape = false ) 
+
+        
+        </description>
         <summary>A single assembly .Net wrapper for Pygments Syntax Highlighter</summary>
         <language />
     </metadata>
