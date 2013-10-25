@@ -61,7 +61,7 @@ namespace Pyg {
 
             var language = opts.Value("language",null);
             var style = opts.Value("style","scite") ;
-            var outputs = opts.Values("output", "html");
+            var outputs = opts.Values("output", "html").Distinct().ToArray();
 
             var highlighter = new Pygments.Highlighter();
             
