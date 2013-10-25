@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>ClrPlus.Pygments</id>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <title>Pygments</title>
         <authors>fearthecowboy coapp</authors>
         <owners>fearthecowboy coapp</owners>
@@ -43,6 +43,7 @@ namespace test {
         </description>
         <summary>A single assembly .Net wrapper for Pygments Syntax Highlighter</summary>
         <language />
+        <releaseNotes>Updated to pygments source v1.6</releaseNotes>
     </metadata>
     <files>
         <file src="output\v40\AnyCPU\Release\bin\ClrPlus.Pygments.dll" target="lib\net40\ClrPlus.Pygments.dll" />
