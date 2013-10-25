@@ -105,7 +105,7 @@ class RtfFormatter(Formatter):
                         int(color[4:6], 16)
                     ))
                     offset += 1
-        outfile.write(r'}\f0')
+        outfile.write(r'}\f0 \fs20')
 
         # highlight stream
         for ttype, value in tokensource:

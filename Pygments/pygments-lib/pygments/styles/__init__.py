@@ -33,6 +33,8 @@ STYLE_MAP = {
     'vim':      'vim::VimStyle',
     'vs':       'vs::VisualStudioStyle',
     'tango':    'tango::TangoStyle',
+    'scite':    'scite::SciteStyle',
+    'scitedark':    'scitedark::SciteDarkStyle',
     'rrt':      'rrt::RrtStyle',
 }
 
