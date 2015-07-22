@@ -8,6 +8,7 @@ using System.Xml.Linq;
 namespace Pyg {
     using System.Collections;
     using System.Collections.Generic;
+    using FearTheCowboy.Pygments;
 
     public static class Extensions {
         public static bool ContainsAny<T>(this IEnumerable<T> collection, params T[] items) {
@@ -63,7 +64,7 @@ namespace Pyg {
             var style = opts.Value("style","scite") ;
             var outputs = opts.Values("output", "html").Distinct().ToArray();
 
-            var highlighter = new Pygments.Highlighter();
+            var highlighter = new Highlighter();
             
 
             foreach (var o in outputs) {

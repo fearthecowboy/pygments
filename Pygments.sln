@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClrPlus.Pygments", "Pygments\ClrPlus.Pygments.csproj", "{685B1F48-9279-4C2F-9D0B-FEEFA0A22B32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pygments", "Pygments\Pygments.csproj", "{685B1F48-9279-4C2F-9D0B-FEEFA0A22B32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pygmentize", "test\pygmentize.csproj", "{B9285B21-1D6E-49AC-981A-12AD2217F8BD}"
 	ProjectSection(ProjectDependencies) = postProject
