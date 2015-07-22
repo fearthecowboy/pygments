@@ -124,19 +124,19 @@ namespace FearTheCowboy.Pygments {
 
         public string HighlightToBBCode(string sourceCode, string lexerName = null, string styleName = null, string filename = null, bool codeTag = false, bool monoFont = false) {
             return _highlight(sourceCode, GetLexer(lexerName, sourceCode, filename),
-                _formatters.BBCodeFormatter(style: GetStyleByName(styleName), codetag: codeTag, monofont: monoFont));
+               _formatters.get_formatter_by_name("bbcode",style: GetStyleByName(styleName), codetag: codeTag, monofont: monoFont));
         }
 
         public string HighlightToRTF(string sourceCode, string lexerName = null, string styleName = null, string filename = null, string fontFace = null) {
             return _highlight(sourceCode, GetLexer(lexerName, sourceCode, filename),
-                _formatters.RtfFormatter(style: GetStyleByName(styleName), fontface: fontFace));
+                _formatters.get_formatter_by_name("rtf", style: GetStyleByName(styleName), fontface: fontFace));
         }
 
         public string HighlightToHtml(string sourceCode, string lexerName = null, string styleName = null, string filename = null, bool fragment = false, string title = "", bool generateInlineStyles = false, string classPrefix = "",
             string wrappingDivClass = "highlight", string wrappingDivStyles = "", string preStyles = "", LineNumberStyle lineNumberStyle = LineNumberStyle.none, int lineNumberStart = 1, bool noBackground = false, string lineBreaks = "\n",
             string lineAnchorPrefix = null, string lineSpanPrefix = null, bool anchorLineNumbers = false, string highlightLines = "") {
-            return _highlight(sourceCode, GetLexer(lexerName, sourceCode, filename),
-                _formatters.HtmlFormatter(style: GetStyleByName(styleName), full: !fragment, title: title, noclasses: generateInlineStyles, classprefix: classPrefix, cssclass: wrappingDivClass, cssstyles: wrappingDivStyles, prestyles: preStyles,
+            
+            return _highlight(sourceCode, GetLexer(lexerName, sourceCode, filename), _formatters.get_formatter_by_name("html", style: GetStyleByName(styleName), full: !fragment, title: title, noclasses: generateInlineStyles, classprefix: classPrefix, cssclass: wrappingDivClass, cssstyles: wrappingDivStyles, prestyles: preStyles,
                     linenos: lineNumberStyle.ToString().Replace("none", ""), linenostart: lineNumberStart, nobackground: noBackground, lineseparator: lineBreaks, lineanchors: lineAnchorPrefix, linespans: lineSpanPrefix, anchorlinenos: anchorLineNumbers,
                     hl_lines: highlightLines));
         }
@@ -144,7 +144,7 @@ namespace FearTheCowboy.Pygments {
         public string HighlightToLatex(string sourceCode, string lexerName = null, string styleName = null, string filename = null, bool fragment = false, string title = "", string documentClass = "article", bool lineNumbers = false, int lineNumberStart = 1,
             int lineStep = 1, bool texComments = false, bool mathEscape = false) {
             return _highlight(sourceCode, GetLexer(lexerName, sourceCode, filename),
-                _formatters.LatexFormatter(style: GetStyleByName(styleName), full: !fragment, title: title, docclass: documentClass, linenos: lineNumbers, linenostart: lineNumberStart, linenostep: lineStep, texcomments: texComments, mathescape: mathEscape));
+                _formatters.get_formatter_by_name("latex", style: GetStyleByName(styleName), full: !fragment, title: title, docclass: documentClass, linenos: lineNumbers, linenostart: lineNumberStart, linenostep: lineStep, texcomments: texComments, mathescape: mathEscape));
         }
 
         public class Lexer {

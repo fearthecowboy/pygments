@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-    pygments.lexers._lassobuiltins
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    pygments.lexers._lasso_builtins
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     Built-in Lasso types, traits, methods, and members.
 
-    :copyright: Copyright 2006-2013 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2015 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
 BUILTINS = {
-    'Types': [
+    'Types': (
         'null',
         'void',
         'tag',
@@ -136,8 +136,10 @@ BUILTINS = {
         'timeonly',
         'net_tcp',
         'net_tcpssl',
+        'net_tcp_ssl',
         'net_named_pipe',
         'net_udppacket',
+        'net_udp_packet',
         'net_udp',
         'pdf_typebase',
         'pdf_doc',
@@ -268,8 +270,8 @@ BUILTINS = {
         'web_error_atend',
         'web_response_impl',
         'web_router'
-    ],
-    'Traits': [
+    ),
+    'Traits': (
         'trait_asstring',
         'any',
         'trait_generator',
@@ -342,8 +344,8 @@ BUILTINS = {
         'web_node_content_html_specialized',
         'web_node_content_css_specialized',
         'web_node_content_js_specialized'
-    ],
-    'Unbound Methods': [
+    ),
+    'Unbound Methods': (
         'fail_now',
         'register',
         'register_thread',
@@ -1275,6 +1277,7 @@ BUILTINS = {
         'lcapi_datasourcesortascending',
         'lcapi_datasourcesortdescending',
         'lcapi_datasourcesortcustom',
+        'lcapi_updatedatasourceslist',
         'lcapi_loadmodules',
         'lasso_version',
         'lasso_uniqueid',
@@ -1842,8 +1845,8 @@ BUILTINS = {
         'web_response',
         'web_router_database',
         'web_router_initialize'
-    ],
-    'Lasso 8 Tags': [
+    ),
+    'Lasso 8 Tags': (
         '__char',
         '__sync_timestamp__',
         '_admin_addgroup',
@@ -3027,10 +3030,10 @@ BUILTINS = {
         'xsd_processsimpletype',
         'xsd_ref',
         'xsd_type'
-    ]
+    )
 }
 MEMBERS = {
-    'Member Methods': [
+    'Member Methods': (
         'escape_member',
         'oncompare',
         'sameas',
@@ -4024,6 +4027,10 @@ MEMBERS = {
         'statuscode',
         'raw',
         'version',
+        'download',
+        'upload',
+        'ftpdeletefile',
+        'ftpgetlisting',
         'perform',
         'performonce',
         's',
@@ -4114,8 +4121,11 @@ MEMBERS = {
         'foreachaccept',
         'writeobjecttcp',
         'readobjecttcp',
+        'beginssl',
+        'endssl',
         'begintls',
         'endtls',
+        'acceptnossl',
         'loadcerts',
         'sslerrfail',
         'fromname',
@@ -4710,8 +4720,8 @@ MEMBERS = {
         'acceptpost',
         'csscontent',
         'jscontent'
-    ],
-    'Lasso 8 Member Tags': [
+    ),
+    'Lasso 8 Member Tags': (
         'accept',
         'add',
         'addattachment',
@@ -5168,5 +5178,5 @@ MEMBERS = {
         'xmllang',
         'xmlschematype',
         'year'
-    ]
+    )
 }
